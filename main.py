@@ -28,7 +28,7 @@ def get_db():
 def read_id(user_id: int, db: Session = Depends(get_db)):
     db_user = crud.get_id(db, user_id=user_id)
     if not db_user:
-        raise HTTPException(status_code=404, code="1",detail="User not found")
+        raise HTTPException(status_code=404,detail="User not found")
     return db_user
 
 
